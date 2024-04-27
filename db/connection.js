@@ -1,10 +1,9 @@
-const DB_URI = 'mongodb+srv://ankitpatelak2017:3VI6fOseehHaVzsF@freecodecamplearn.ahizvvk.mongodb.net/?retryWrites=true&w=majority&appName=FreeCodeCampLearn';
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
 
 const connectToDatabase = async () => {
     try {
-        await mongoose.connect(DB_URI, {
+        await mongoose.connect(process.env.DB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });

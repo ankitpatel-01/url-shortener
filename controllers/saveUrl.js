@@ -12,7 +12,7 @@ const generateShortUrl = () => {
     return Math.random().toString(36).substring(2, 6);
 }
 
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = process.env.BASE_URL
 
 exports.shorten = async (req, res) => {
     const { longUrl } = req.body
